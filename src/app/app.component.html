@@ -1,0 +1,17 @@
+<button type="reset" (click)="reset($event)">Reset</button>
+<hr />
+
+<label for="userSelect">Users: </label>
+<select [(ngModel)]="selectedUser" id="userSelect" (change)="userSelected($event)">
+  <option *ngFor="let user of users;" value="{{ user.id }}">{{ user.name }}</option>
+</select>
+
+<label for="postSelect">Posts: </label>
+<select [(ngModel)]="selectedPost" id="postSelect" (change)="postSelected($event)">
+  <option *ngFor="let post of posts;" value="{{ post.id }}">{{ post.title }}</option>
+</select>
+
+<label for="commentSelect">Comments</label>
+<select [(ngModel)]="selectedComment" id="commentSelect" (change)="commentSelected($event)">
+  <option *ngFor="let comment of comments;" value="{{ comment.id }}">{{ comment.name }}</option>
+</select>
